@@ -30,6 +30,7 @@ functionExpression(function () {
 
 /*
     First Class Function OR First Class Citizens
+    Function treated as variables
     Ability to Pass function as an argument and returning function as a value 
 */
 functionExpression(function () {
