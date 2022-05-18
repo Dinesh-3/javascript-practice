@@ -1,9 +1,11 @@
-////////////////////////////////////
+// import scopeJS from "./scope.js";
+
+console.log("=== SCRIPT JS FILE ===");
+
 // Linking a JavaScript File
 let js = "amazing";
 console.log(40 + 8 + 23 - 10);
 
-////////////////////////////////////
 // Values and Variables
 console.log("Jonas");
 console.log(23);
@@ -29,7 +31,6 @@ let job2 = "teacher";
 
 console.log(myFirstJob);
 
-////////////////////////////////////
 // Data Types
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
@@ -63,5 +64,17 @@ const birthYear = 1991;
 var job = "programmer";
 job = "teacher";
 
-lastName = "Schmedtmann";
-console.log(lastName);
+// lastName = "Schmedtmann"; // Uncaught TypeError: Assignment to constant variable. | Because in imported scope file it is declared
+
+console.log("Accessing variable from one file to another file");
+
+console.log(
+    `<script src="./operators.js" type="module"></script> Accessing lastName variable from operators: ${lastName} `
+);
+
+console.log(`<script src="./scope.js"></script> Accessing BLOCK Constant variable from scope.js:: ${BLOCK}`);
+
+console.log("=== END ===");
+
+// because of this below issue above code are not going to execute
+// const WRONG; // Won't stop the execution of other scripts present in the script tag or file

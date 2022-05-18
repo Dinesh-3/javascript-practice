@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      body {
+        text-align: center;
+      }
+      .event-handling div {
+        padding: 5rem;
+        border: 5px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="event-handling">
+      <div class="bubbling-out">
+        <h1>BUBBLING OUT</h1>
+        <div class="grand-parent">
+          <div class="parent">
+            <div class="child"></div>
+          </div>
+        </div>
+      </div>
+      <div class="capturing">
+        <h1>EVENT CAPTURING OR TRICKLING DOWN</h1>
+        <div class="grand-parent">
+          <div class="parent">
+            <div class="child"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section
+      class="bubbling capturing"
+      style="border: 10px solid red; width: 20rem; padding: 5rem"
+    >
+      <div
+        style="border: 5px solid black; background-color: brown"
+        class="parent"
+      >
+        <div
+          class="component1"
+          style="
+            background-color: green;
+            border: 5px solid black;
+            padding: 5rem;
+          "
+        >
+          Component 1
+          <div style="border: 5px solid orange" class="child">
+            <div
+              class="component1"
+              style="
+                background-color: green;
+                border: 5px solid black;
+                padding: 5rem;
+              "
+            >
+              Component 1
+            </div>
+            <div
+              class="component2"
+              style="
+                background-color: green;
+                border: 5px solid black;
+                padding: 5rem;
+              "
+            >
+              Component 2
+            </div>
+            <div
+              class="component3"
+              style="
+                background-color: green;
+                border: 5px solid black;
+                padding: 5rem;
+              "
+            >
+              Component 3
+            </div>
+          </div>
+        </div>
+        <div
+          class="component2"
+          style="
+            background-color: green;
+            border: 5px solid black;
+            padding: 5rem;
+          "
+        >
+          Component 2
+        </div>
+        <div
+          class="component3"
+          style="
+            background-color: green;
+            border: 5px solid black;
+            padding: 5rem;
+          "
+        >
+          Component 3
+        </div>
+      </div>
+    </section> -->
+    <script src="eventHandling.js"></script>
+  </body>
+</html>

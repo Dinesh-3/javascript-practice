@@ -27,7 +27,7 @@ Callback Queue:
 
 Microtask Queue -> Similar to callback queue
     Promise, Mutation Observer ( Watches DOM changes ) will go into Microtask Queue
-
+    Microtask Queue high priority queue. 
     Event Loop will give chance to Callback Queue only if Microtask Queue is empty
 
 FETCH API:
@@ -72,7 +72,7 @@ SET TIMEOUT Trust issues
 */
 
 setTimeout(function () {
-    console.log("Executes after main block exectued");
+    console.log("Executes after main block executed");
 }, 0);
 
 setTimeout(function () {

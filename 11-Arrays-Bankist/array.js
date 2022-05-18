@@ -1,21 +1,19 @@
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 // LECTURES
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/////////////////////////////////////////////////
 // Simple Array Methods
 let letters = ['a', 'b', 'c', 'd', 'e'];
 
 // SLICE
-console.log(letters.slice(2));
-console.log(letters.slice(2, 4));
-console.log(letters.slice(-2));
-console.log(letters.slice(-1));
-console.log(letters.slice(1, -2));
-console.log(letters.slice());
-console.log([...letters]);
+console.log({ letters });
+console.log('letters.slice(2) ' + letters.slice(2));
+console.log('letters.slice(2, 4) ' + letters.slice(2, 4));
+console.log('letters.slice(-2) ' + letters.slice(-2));
+console.log('letters.slice(-1) ' + letters.slice(-1));
+console.log('letters.slice(1, -2) ' + letters.slice(1, -2));
+console.log(`letters.slice() ${letters.slice()}`);
+console.log(`[...letters] ${[...letters]}`);
 
 // SPLICE
 // console.log(arr.splice(2));
@@ -65,7 +63,7 @@ for (const [i, movement] of movements.entries()) {
 }
 
 console.log('---- FOREACH ----');
-movements.forEach(function (mov, i, arr) {
+movements.forEach(function (mov, i, entireArray) {
   if (mov > 0) {
     console.log(`Movement ${i + 1}: You deposited ${mov}`);
   } else {
@@ -92,7 +90,29 @@ currencies.forEach(function (value, key, map) {
 
 // Set
 const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
-console.log(currenciesUnique);
+
+console.log({ currenciesUnique });
+
 currenciesUnique.forEach(function (value, _, map) {
-  console.log(`${value}: ${value}`);
+  console.log({ value, _, map });
 });
+
+// 4.
+// this is a nice title -> This Is a Nice Title
+const convertTitleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' ');
+
+  return capitalize(titleCase);
+};
+
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));

@@ -582,6 +582,7 @@ const get3Countries = async function (c1, c2, c3) {
     // );
     // console.log([data1.capital, data2.capital, data3.capital]);
 
+    // It will for promises to finish. if one fails it will stop others
     const data = await Promise.all([
       getJSON(`https://restcountries.eu/rest/v2/name/${c1}`),
       getJSON(`https://restcountries.eu/rest/v2/name/${c2}`),

@@ -7,7 +7,7 @@ const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
 
-  // Never to this!
+  // Never do this! it will create this function for each instance
   // this.calcAge = function () {
   //   console.log(2037 - this.birthYear);
   // };
@@ -46,9 +46,18 @@ matilda.calcAge();
 console.log(jonas.__proto__);
 console.log(jonas.__proto__ === Person.prototype);
 
-console.log(Person.prototype.isPrototypeOf(jonas));
-console.log(Person.prototype.isPrototypeOf(matilda));
-console.log(Person.prototype.isPrototypeOf(Person));
+console.log(
+  'Person.prototype.isPrototypeOf(jonas) ' +
+    Person.prototype.isPrototypeOf(jonas)
+);
+console.log(
+  'Person.prototype.isPrototypeOf(matilda) ' +
+    Person.prototype.isPrototypeOf(matilda)
+);
+console.log(
+  'Person.prototype.isPrototypeOf(Person) ' +
+    Person.prototype.isPrototypeOf(Person)
+);
 
 // .prototyeOfLinkedObjects
 
@@ -79,5 +88,5 @@ Array.prototype.unique = function () {
 
 console.log(arr.unique());
 
-const h1 = document.querySelector('h1');
+const h1Element = document.querySelector('h1');
 console.dir(x => x + 1);

@@ -1,31 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>JavaScript Fundamentals – Part 1</title>
-    <style>
-      body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(to top left, #28b487, #7dd56f);
-      }
-      h1 {
-        font-family: sans-serif;
-        font-size: 50px;
-        line-height: 1.3;
-        width: 100%;
-        padding: 30px;
-        text-align: center;
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>JavaScript Fundamentals – Part 1</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>JavaScript Fundamentals – Part 1</title>
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                background: linear-gradient(to top left, #28b487, #7dd56f);
+            }
+            h1 {
+                font-family: sans-serif;
+                font-size: 50px;
+                line-height: 1.3;
+                width: 100%;
+                padding: 30px;
+                text-align: center;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>JavaScript Fundamentals – Part 1</h1>
 
-    <script src="script.js"></script>
-  </body>
+        <script>
+            var VAR_DECLARED_INSIDE_SCRIPT_TAG_TOP_HTML_TREE = 42;
+            let LET_DECLARED_INSIDE_SCRIPT_TAG_TOP_HTML_TREE = 43;
+            const const_test = "const_test";
+
+            // Uncaught ReferenceError: VAR_DECLARED_IN_LAST_SCRIPT_TAG is not defined
+            // console.log({
+            //     VAR_DECLARED_IN_LAST_SCRIPT_TAG,
+            //     LET_DECLARED_IN_LAST_SCRIPT_TAG,
+            //     CONST_DECLARED_IN_LAST_SCRIPT_TAG
+            // });
+        </script>
+
+        <!-- if type="module" we can't access any local variable from both script tag and js file -->
+        <script src="./datatype.js"></script>
+        <script src="./scope.js"></script>
+        <script src="./operators.js" type="module"></script>
+
+        <script src="script.js" type="module"></script>
+        <script src="./interview.js"></script>
+        <!-- We can all local variables from one file to other file. because type="module" is specified-->
+
+        <!-- It's different with variables declared using let and const—they don't become global variables. 
+    You can access them in another script tag, but you can't access them as properties of window. -->
+
+        <!-- for above if <script type="module"> below script won't get access -->
+
+        <script>
+            console.log("===Accessing from one script tag to another script tag===");
+            console.log(VAR_DECLARED_INSIDE_SCRIPT_TAG_TOP_HTML_TREE); // 42
+            console.log(window.VAR_DECLARED_INSIDE_SCRIPT_TAG_TOP_HTML_TREE); // 42
+            console.log(LET_DECLARED_INSIDE_SCRIPT_TAG_TOP_HTML_TREE); // 43
+            console.log(window.test2); // undefined
+            console.log(`CONST TEST: ${const_test}`); // CONST TEST: const_test
+            console.log("===END===");
+
+            console.log("===Accessing variables declared from js file to script tag===");
+
+            console.log(`LET_FRUIT: ${LET_FRUIT}`); // LET_FRUIT: LET_FRUIT
+            console.log(`VAR_FRUIT: ${VAR_FRUIT}`); // VAR_FRUIT: VAR_FRUIT
+
+            // console.log(`VAR_DECLARED_INSIDE_FUNCTION: ${VAR_DECLARED_INSIDE_FUNCTION}`); // Uncaught ReferenceError: VAR_DECLARED_INSIDE_FUNCTION is not defined
+            console.log(`VAR_DECLARED_INSIDE_BLOCK: ${VAR_DECLARED_INSIDE_BLOCK}`); // VAR_DECLARED_INSIDE_BLOCK: VAR_DECLARED_INSIDE_BLOCK
+            console.log("===END===");
+
+            var VAR_DECLARED_IN_LAST_SCRIPT_TAG = "VAR_DECLARED_IN_LAST_SCRIPT_TAG";
+            let LET_DECLARED_IN_LAST_SCRIPT_TAG = "LET_DECLARED_IN_LAST_SCRIPT_TAG";
+            const CONST_DECLARED_IN_LAST_SCRIPT_TAG = "CONST_DECLARED_IN_LAST_SCRIPT_TAG";
+        </script>
+    </body>
 </html>

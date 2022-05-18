@@ -14,7 +14,7 @@ function b() {
     console.log(x);
 }
 
-console.log(this === window);
+console.log(this === window); // true
 
 console.log(window.x);
 
@@ -23,8 +23,8 @@ let a_let = "a_let";
 var a_var = "a_var";
 
 console.log(window.a_const);
-console.log(window.a_let);
-console.log(window.a_var);
+console.log(window.a_let); // undefined
+console.log(window.a_var); // undefined
 
 // const init; // missing initializer in const
 const apple = "APPLE";
