@@ -1,10 +1,10 @@
-const DINESH = {
-    firstName: "Dinesh",
-    lastName: "Iyyandurai",
-    getFullName: function () {
-        return `${this.firstName} ${this.lastName}`;
-    }
-};
+// const DINESH = {
+//     firstName: "Dinesh",
+//     lastName: "Iyyandurai",
+//     getFullName: function () {
+//         return `${this.firstName} ${this.lastName}`;
+//     }
+// };
 
 /*
 
@@ -30,13 +30,13 @@ Trying to make any changes mentioned above after an object being frozen will fai
 It will work only add the top level. we can able do CRUD in nested objects. If we need to prevent this we need to traverse object recursively and need to apply freeze on each nested objects
 
 */
-Object.freeze(DINESH);
+// Object.freeze(DINESH);
 
-DINESH.firstName = "NO"; // Won't throw error but not going to set the value
+// DINESH.firstName = "NO"; // Won't throw error but not going to set the value
 
-console.log({ DINESH });
+// console.log({ DINESH });
 
-console.log(`Object.isFrozen(DINESH) ${Object.isFrozen(DINESH)}`); // is an Object method to check if an object is frozen by passing the object as the argument.
+// console.log(`Object.isFrozen(DINESH) ${Object.isFrozen(DINESH)}`); // is an Object method to check if an object is frozen by passing the object as the argument.
 
 /*
 
@@ -99,6 +99,6 @@ Example:
     }
 
 */
-console.timeLog("test");
-console.log("test %c Hi Dinesh", "color:red");
-console.groupEnd("test");
+// console.timeLog("test");
+// console.log("test %c Hi Dinesh", "color:red");
+// console.groupEnd("test");

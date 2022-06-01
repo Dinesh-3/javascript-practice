@@ -5,15 +5,17 @@ rest.set("name", "Classico Italiano");
 rest.set(1, "Firenze, Italy");
 console.log(rest.set(2, "Lisbon, Portugal"));
 
+const addTwoNumbers = (a, b) => {
+  return a + b;
+};
+
 rest
   .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
   .set("open", 11)
   .set("close", 23)
   .set(true, "We are open :D")
   .set(false, "We are closed :(");
-//   .set("addTwoNumbers",  (a, b) {  // Won't work both function declaration and arrow function
-//       return a + b;
-//   })
+// .set("addTwoNumbers",  addTwoNumbers) // Won't work both function declaration and arrow function
 
 console.log(rest.get("name"));
 console.log(rest.get(true));
@@ -28,7 +30,7 @@ rest.delete(2);
 
 const arr = [1, 2];
 rest.set(arr, "Test");
-rest.set(document.querySelector("h1"), "Heading");
+// rest.set(document.querySelector("h1"), "Heading");
 console.log(rest);
 console.log(rest.size);
 
@@ -47,9 +49,9 @@ const question = new Map([
 console.log(question);
 
 // Convert object to map
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
 
 // Quiz app
 console.log(question.get("question"));

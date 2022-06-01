@@ -110,3 +110,5 @@ console.log("=== SCOPE END ===");
 
 // Above code won't execute because of below code
 // export default CONST_FRUIT; // Uncaught ReferenceError: LET_FRUIT is not defined
+
+GLOBAL_VARIABLE = "Dinesh Iyyandurai"; // var is missing, it becomes global variable
