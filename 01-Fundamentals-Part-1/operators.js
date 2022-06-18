@@ -62,4 +62,16 @@ console.log(`roundOf(lockerPrice) ${roundOf(lockerPrice)}`);
 
 console.log({ lockerPrice, parsedInt });
 
+/*
+    UNARY OPERATOR
+    The unary(+) operator is used to convert a variable to a number.If the variable cannot be converted, it will still become a number but with the value NaN. Let's see this behavior in an action.
+
+*/
+let x100 = "100";
+let y100 = +x;
+console.log(typeof x100, typeof y100); // string, number
+
+let hello = "Hello";
+let numberHello = +hello;
+console.log(typeof hello, typeof numberHello, numberHello); // string, number, NaN
 console.log("=== END ===");

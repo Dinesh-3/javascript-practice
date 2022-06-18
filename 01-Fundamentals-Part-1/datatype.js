@@ -2,6 +2,13 @@ console.log("=== DATATYPE START ===");
 
 /**
  * The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values. The type of null value is object. You can empty the variable by setting the value to null.
+ * string
+   number
+   boolean
+   null
+   undefined
+   bigint
+   symbol
  */
 var userNull = null;
 console.log(typeof userNull); //object
@@ -52,6 +59,16 @@ console.log({ nullPlusString, undefinedPlusString });
  */
 
 console.log('eval("6 + ( 2 * 2 )") ' + eval("6 + ( 2 * 2 )"));
+
+/**
+ * uneval()
+ * The uneval() is an inbuilt function which is used to create a string representation of the source code of an Object. It is a top-level function and is not associated with any object. Let's see the below example to know more about it's functionality,
+
+ */
+
+const number = 1;
+uneval(number); // "1"
+uneval(function user() {}); // "(function user(){})"
 
 /**
  * The isNaN() function is used to determine whether a value is an illegal number (Not-a-Number) or not. i.e, This function returns true if the value equates to NaN. Otherwise it returns false.

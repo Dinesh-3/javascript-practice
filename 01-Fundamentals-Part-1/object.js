@@ -102,3 +102,88 @@ Example:
 // console.timeLog("test");
 // console.log("test %c Hi Dinesh", "color:red");
 // console.groupEnd("test");
+
+// To check TWO objects are same or not
+Object.is("hello", "hello"); // true
+Object.is(window, window); // true
+Object.is([], []); // false
+
+/**
+ * ACCESSORS
+ * ECMAScript 5 introduced javascript object accessors or computed properties through getters and setters. Getters uses the get keyword whereas Setters uses the set keyword.
+ */
+const user = {
+  firstName: "John",
+  lastName : "Abraham",
+  language : "en",
+  
+  get lang() {
+    return this.language;
+  }
+
+  set lang(lang) {
+    this.language = lang;
+  }
+};
+console.log(user.lang); // getter access lang as en
+user.lang = 'fr';
+console.log(user.lang); // setter used to set lang as fr
+
+/**
+ * 
+    How do you define property on Object constructor
+    The Object.defineProperty() static method is used to define a new property directly on an object, or modify an existing property on an object, and returns the object. Let's see an example to know how to define property,
+
+    const newObject = {};
+
+    Object.defineProperty(newObject, "newProperty", {
+    value: 100,
+    writable: false,
+    });
+
+    console.log(newObject.newProperty); // 100
+
+    newObject.newProperty = 200; // It throws an error in strict mode due to writable setting
+
+    set and defineProperty difference
+    Both have similar results until unless you use classes. If you use get the property will be defined on the prototype of the object whereas using Object.defineProperty() the property will be defined on the instance it is applied to.
+
+    Getters and Setters advantages
+    They provide simpler syntax
+    They are used for defining computed properties, or accessors in JS.
+    Useful to provide equivalence relation between properties and methods
+    They can provide better data quality
+    Useful for doing things behind the scenes with the encapsulated logic.
+ */
+
+var obj = { counter: 0 };
+
+// Define getters
+Object.defineProperty(obj, "increment", {
+  get: function () {
+    this.counter++;
+  },
+});
+Object.defineProperty(obj, "decrement", {
+  get: function () {
+    this.counter--;
+  },
+});
+
+// Define setters
+Object.defineProperty(obj, "add", {
+  set: function (value) {
+    this.counter += value;
+  },
+});
+Object.defineProperty(obj, "subtract", {
+  set: function (value) {
+    this.counter -= value;
+  },
+});
+
+obj.add = 10;
+obj.subtract = 5;
+console.log(obj.increment); //6
+console.log(obj.decrement); //5
+

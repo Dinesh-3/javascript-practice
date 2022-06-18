@@ -112,6 +112,9 @@ const state = {
   user: { loggedIn: true },
 };
 const stateClone = Object.assign({}, state);
+
+console.log('state === stateClone ' + state === stateClone);
+
 const stateDeepClone = cloneDeep(state);
 
 state.user.loggedIn = false;
