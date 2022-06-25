@@ -113,20 +113,20 @@ Object.is([], []); // false
  * ECMAScript 5 introduced javascript object accessors or computed properties through getters and setters. Getters uses the get keyword whereas Setters uses the set keyword.
  */
 const user = {
-  firstName: "John",
-  lastName : "Abraham",
-  language : "en",
-  
-  get lang() {
-    return this.language;
-  }
+    firstName: "John",
+    lastName: "Abraham",
+    language: "en",
 
-  set lang(lang) {
-    this.language = lang;
-  }
+    get lang() {
+        return this.language;
+    },
+
+    set lang(lang) {
+        this.language = lang;
+    }
 };
 console.log(user.lang); // getter access lang as en
-user.lang = 'fr';
+user.lang = "fr";
 console.log(user.lang); // setter used to set lang as fr
 
 /**
@@ -160,30 +160,29 @@ var obj = { counter: 0 };
 
 // Define getters
 Object.defineProperty(obj, "increment", {
-  get: function () {
-    this.counter++;
-  },
+    get: function () {
+        this.counter++;
+    }
 });
 Object.defineProperty(obj, "decrement", {
-  get: function () {
-    this.counter--;
-  },
+    get: function () {
+        this.counter--;
+    }
 });
 
 // Define setters
 Object.defineProperty(obj, "add", {
-  set: function (value) {
-    this.counter += value;
-  },
+    set: function (value) {
+        this.counter += value;
+    }
 });
 Object.defineProperty(obj, "subtract", {
-  set: function (value) {
-    this.counter -= value;
-  },
+    set: function (value) {
+        this.counter -= value;
+    }
 });
 
 obj.add = 10;
 obj.subtract = 5;
 console.log(obj.increment); //6
 console.log(obj.decrement); //5
-

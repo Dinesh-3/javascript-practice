@@ -1,7 +1,7 @@
 const start = new Date().getTime();
 
 // for (i = 0; i <= 100_000; i++) {
-// 	console.log("LOOPED: " + i);
+//     console.log("LOOPED: " + i);
 // }
 
 if (1 == "1") console.log(1 == "1");

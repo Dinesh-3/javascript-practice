@@ -14,7 +14,7 @@ const Person = function (firstName, birthYear) {
 };
 
 const jonas = new Person("Jonas", 1991);
-console.log(jonas);
+console.log({ jonas });
 
 // 1. New {} is created
 // 2. function is called, this = {}
@@ -26,6 +26,7 @@ const jack = new Person("Jack", 1975);
 
 console.log(jonas instanceof Person);
 
+// STATIC METHOD
 Person.hey = function () {
     console.log("Hey there 👋");
     console.log(this);
@@ -34,7 +35,7 @@ Person.hey();
 
 ///////////////////////////////////////
 // Prototypes
-console.log(Person.prototype);
+// console.log("Person.prototype: ", Person.prototype);
 
 Person.prototype.calcAge = function () {
     console.log(2037 - this.birthYear);
@@ -43,8 +44,10 @@ Person.prototype.calcAge = function () {
 jonas.calcAge();
 matilda.calcAge();
 
-console.log(jonas.__proto__);
-console.log(jonas.__proto__ === Person.prototype);
+console.log("jonas.__proto__: ", jonas.__proto__);
+console.log("Person.prototype: ", Person.prototype);
+
+console.log("jonas.__proto__ === Person.prototype: ", jonas.__proto__ === Person.prototype);
 
 console.log("Person.prototype.isPrototypeOf(jonas) " + Person.prototype.isPrototypeOf(jonas));
 console.log("Person.prototype.isPrototypeOf(matilda) " + Person.prototype.isPrototypeOf(matilda));
@@ -55,7 +58,7 @@ console.log("Person.prototype.isPrototypeOf(Person) " + Person.prototype.isProto
 Person.prototype.species = "Homo Sapiens";
 console.log(jonas.species, matilda.species);
 
-console.log(jonas.hasOwnProperty("firstName"));
+console.log(jonas.hasOwnProperty("firstName")); // Determines whether an object has a property with the specified name.
 console.log(jonas.hasOwnProperty("species"));
 
 ///////////////////////////////////////
@@ -65,7 +68,9 @@ console.log(jonas.__proto__);
 console.log(jonas.__proto__.__proto__);
 console.log(jonas.__proto__.__proto__.__proto__);
 
-console.dir(Person.prototype.constructor);
+console.dir("Person.prototype.constructor: ", Person.prototype.constructor);
+
+console.log("jonas.constructor: ", jonas.constructor); // The initial value of Object.prototype.constructor is the standard built-in Object constructor.
 
 const arr = [3, 6, 6, 5, 6, 9, 9]; // new Array === []
 console.log(arr.__proto__);

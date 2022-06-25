@@ -7,9 +7,9 @@ const successPromiseOneSecond = new Promise((resolve, reject) => {
 
 const successPromiseTwoSecond = new Promise((resolve, reject) => {
     setTimeout(() => {
-        console.log("Success Promise 2000 executed...");
+        console.log("Success Promise 200 executed...");
         resolve("Success");
-    }, 2000);
+    }, 200);
 });
 
 const errorPromise = new Promise((resolve, reject) => {
@@ -18,7 +18,7 @@ const errorPromise = new Promise((resolve, reject) => {
 
         let name;
 
-        // console.log(name.dinesh);
+        console.log(name.dinesh);
 
         resolve("Error Promise");
     }, 1000);
@@ -33,27 +33,27 @@ const rejectedPromise = new Promise((resolve, reject) => {
 });
 
 // const promiseAll = Promise.all([successPromiseOneSecond, successPromiseTwoSecond, errorPromise, rejectedPromise]); // Creates a Promise that is resolved with an array of results when all of the provided Promises resolve, or rejected when any Promise is rejected.
-const promiseRace = Promise.race([successPromiseOneSecond, successPromiseTwoSecond, errorPromise, rejectedPromise]); // Creates a Promise that is resolved or rejected when any of the provided Promises are resolved or rejected.
-// const promiseAny = Promise.any([successPromiseOneSecond, successPromiseTwoSecond, errorPromise, rejectedPromise]);
-// const promiseAllSettled = Promise.allSettled([
-//     successPromiseOneSecond,
-//     successPromiseTwoSecond,
-//     errorPromise,
-//     rejectedPromise
-// ]); // Creates a Promise that is resolved with an array of results when all of the provided Promises resolve or reject.
-
 // promiseAll
 //     .then((result) => console.log("Promise All ", { result }))
 //     .catch((error) => console.log("Promise All ", { error }));
 
-promiseRace
-    .then((result) => console.log("Promise Race ", { result }))
-    .catch((error) => console.log("Promise Race ", { error }));
+// const promiseRace = Promise.race([successPromiseOneSecond, successPromiseTwoSecond, errorPromise, rejectedPromise]); // Creates a Promise that is resolved or rejected when any of the provided Promises are resolved or rejected.
+// promiseRace
+//     .then((result) => console.log("Promise Race ", { result }))
+//     .catch((error) => console.log("Promise Race ", { error }));
 
+// const promiseAny = Promise.any([successPromiseOneSecond, successPromiseTwoSecond, errorPromise, rejectedPromise]); // Return result if any one got succeed
 // promiseAny
 //     .then((result) => console.log("Promise Any ", { result }))
 //     .catch((error) => console.log("Promise Any ", { error }));
 
-// promiseAllSettled
-//     .then((result) => console.log("Promise All Settled ", { result }))
-//     .catch((error) => console.log("Promise All Settled ", { error }));
+const promiseAllSettled = Promise.allSettled([
+    successPromiseOneSecond,
+    successPromiseTwoSecond,
+    errorPromise,
+    rejectedPromise
+]); // Creates a Promise that is resolved with an array of results when all of the provided Promises resolve or reject.
+
+promiseAllSettled
+    .then((result) => console.log("Promise All Settled ", { result }))
+    .catch((error) => console.log("Promise All Settled ", { error }));

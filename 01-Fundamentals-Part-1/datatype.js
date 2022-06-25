@@ -76,8 +76,8 @@ uneval(function user() {}); // "(function user(){})"
 isNaN("Hello"); //true
 isNaN("100"); //false
 
-Math.sqrt(-1);
-parseInt("Hello");
+Math.sqrt(-1); // NaN
+parseInt("Hello"); // NaN
 
 /**
  * The isFinite() function is used to determine whether a number is a finite, legal number.
