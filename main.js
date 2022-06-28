@@ -1,4 +1,4 @@
-Execution context:
+/* EXECUTION CONTEXT:
 
 Global Execution context and Global Memory Object
 
@@ -19,3 +19,4 @@ Scope Chain === Lexical Environment -> Parent Child Scope Relation
 Local Memory + Lexical Environment of Parent
 
 Temporal Dead Zone = let and cost ( Without initializing above if we access then it will throw can't access 'variable_name' before  initialization )
+*/

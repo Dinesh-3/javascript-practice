@@ -1,2 +1,0 @@
-Show parameters => Ctrl + Shift + Space
-
