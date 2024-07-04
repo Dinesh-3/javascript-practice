@@ -5,4 +5,5 @@ let decoded_uri = decodeURI(encoded_uri);
 
 console.log({ encoded_uri, decoded_uri });
 
-console.log(encodeURIComponent(URL)); // / ? : @ & = + $ #
+console.log(encodeURIComponent(URL));
+

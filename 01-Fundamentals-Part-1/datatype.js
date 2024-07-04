@@ -75,6 +75,7 @@ uneval(function user() {}); // "(function user(){})"
  */
 isNaN("Hello"); //true
 isNaN("100"); //false
+isNaN(null); //false
 
 Math.sqrt(-1); // NaN
 parseInt("Hello"); // NaN

@@ -1,10 +1,10 @@
-// const DINESH = {
-//     firstName: "Dinesh",
-//     lastName: "Iyyandurai",
-//     getFullName: function () {
-//         return `${this.firstName} ${this.lastName}`;
-//     }
-// };
+const DINESH = {
+    firstName: "Dinesh",
+    lastName: "Iyyandurai",
+    getFullName: function () {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
 
 /*
 
@@ -90,12 +90,12 @@ Example:
     Example:
 
     let person = {
-    firstName: "James",  // firstName cannot be changed when frozen
-    lastName: "Bond",    // lastName cannot be changed when frozen
-    marks: {             // marks cannot be changed when frozen
-        mathematics: 90,   // mathematics can be changed when frozen
-        science: 89        // science can be changed when frozen
-    }
+        firstName: "James",  // firstName cannot be changed when frozen
+        lastName: "Bond",    // lastName cannot be changed when frozen
+        marks: {             // marks cannot be changed when frozen
+            mathematics: 90,   // mathematics can be changed when frozen
+            science: 89        // science can be changed when frozen
+        }
     }
 
 */
@@ -134,11 +134,14 @@ console.log(user.lang); // setter used to set lang as fr
     How do you define property on Object constructor
     The Object.defineProperty() static method is used to define a new property directly on an object, or modify an existing property on an object, and returns the object. Let's see an example to know how to define property,
 
+    //    VM343:11 Uncaught TypeError: Cannot assign to read only property 'newProperty' of object '#<Object>'
+    //    at <anonymous>:11:27
+
     const newObject = {};
 
     Object.defineProperty(newObject, "newProperty", {
-    value: 100,
-    writable: false,
+        value: 100,
+        writable: false,
     });
 
     console.log(newObject.newProperty); // 100
@@ -248,7 +251,6 @@ console.log("Object.values(circle); " + Object.values(circle));
 {
     // Public member
     this.radius = "radius";
-
     // Private member
     var defaultLocation = {};
 }

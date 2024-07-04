@@ -1,5 +1,5 @@
 /**
- * Error Name	Description
+    Error Name	Description
     EvalError	An error has occurred in the eval() function
     RangeError	An error has occurred with a number "out of range"
     ReferenceError	An error due to an illegal reference // undefinedVariable is not defined

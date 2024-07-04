@@ -1,3 +1,4 @@
+while (1);
 /* 
     SCOPE TYPE:
         GLOBAL SCOPE
@@ -31,6 +32,8 @@ var BLOCK = "MAIN_BLOCK"; // Shadowing will happen
 }
 
 console.log({ BLOCK });
+console.log({ VAR_DECLARED_INSIDE_BLOCK });
+// console.log({ BLOCK_ONE }); // ReferenceError: BLOCK_ONE is not defined
 
 const BLOCK_TWO = "BLOCK_TWO";
 
@@ -115,7 +118,6 @@ GLOBAL_VARIABLE = "Dinesh Iyyandurai"; // var is missing, it becomes global vari
 
 ("use strict");
 
-///////////////////////////////////////
 // Scoping in Practice
 
 function calcAge(birthYear) {
@@ -197,18 +199,18 @@ var x = 1;
 let y = 2;
 const z = 3;
 
-console.log(x === window.x); // 1
-console.log(y === window.y); // undefined
-console.log(z === window.z); // undefined
+// console.log(x === window.x); // 1
+// console.log(y === window.y); // undefined
+// console.log(z === window.z); // undefined
 
 ///////////////////////////////////////
 // The this Keyword in Practice
 console.log(this);
 
-const calcAge = function (birthYear) {
-    console.log(2037 - birthYear);
-    console.log(this);
-};
+// const calcAge = function (birthYear) {
+//     console.log(2037 - birthYear);
+//     console.log(this);
+// };
 calcAge(1991);
 
 const calcAgeArrow = (birthYear) => {
@@ -273,7 +275,7 @@ age = 31;
 console.log(age);
 console.log(oldAge);
 
-const me = {
+const meTwo = {
     name: "Jonas",
     age: 30
 };
@@ -319,3 +321,4 @@ jessicaCopy.family.push("John");
 
 console.log("Before marriage:", jessica2);
 console.log("After marriage: ", jessicaCopy);
+

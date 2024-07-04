@@ -56,9 +56,9 @@ innerFunction("calling inner function from main block");
 
 // TO BROWSER WEB STORAGE SUPPORT
 if (typeof Storage !== "undefined") {
-    // Code for localStorage/sessionStorage.
+    console.log("Code for localStorage/sessionStorage.");
 } else {
-    // Sorry! No Web Storage support..
+    console.log("Sorry! No Web Storage support..");
 }
 
 // check browser support for web workers

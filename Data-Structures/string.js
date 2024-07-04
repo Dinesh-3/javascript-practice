@@ -115,8 +115,7 @@ const priceGB = "288,97£";
 const priceUS = priceGB.replace("£", "$").replace(",", ".");
 console.log(priceUS);
 
-const announcement =
-  "All passengers come to boarding door 23. Boarding door 23!";
+const announcement = "All passengers come to boarding door 23. Boarding door 23!";
 
 console.log(announcement.replace("door", "gate"));
 // console.log(announcement.replaceAll('door', 'gate'));
@@ -136,7 +135,6 @@ if (airbusPlane.startsWith("Airbus") && airbusPlane.endsWith("neo")) {
 // Practice exercise
 const checkBaggage = function (items) {
   const baggage = items.toLowerCase();
-
   if (baggage.includes("knife") || baggage.includes("gun")) {
     console.log("You are NOT allowed on board");
   } else {

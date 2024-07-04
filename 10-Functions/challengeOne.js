@@ -62,6 +62,7 @@ const poll = {
       console.log(`Poll results are ${this.answers.join(', ')}`);
     }
   },
+
 };
 
 document

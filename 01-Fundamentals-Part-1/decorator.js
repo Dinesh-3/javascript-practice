@@ -11,7 +11,7 @@ function admin(isAdmin) {
 }
 
 @admin(true)
-class User1() {
+class User1 {
 }
 console.log(User1.isAdmin); //true
 

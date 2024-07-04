@@ -21,23 +21,17 @@ const nestedArrowFunction = {
     level2Arrow(4, 5, 6, 2);
   },
 };
+nestedArrowFunction.getFullName();
 
 const nestedFunction = {
   firstName: 'Nested',
   lastName: 'Level 2',
   getFullName: function () {
-    console.log('THIS LEVEL ONE FUNCTION: ', this);
-    const self = this;
+    console.log('LEVEL ONE THIS: ', this);
     function level2() {
-      const LEVEL = 2;
-      console.log('arguments: ' + arguments);
-      console.log(`THIS LEVEL ${LEVEL} FUNCTION: `, self);
+      console.log('LEVEL TWO THIS: ', this);
     }
-
     level2(3, 4, 2, 6);
   },
 };
-
-nestedArrowFunction.getFullName();
-
 nestedFunction.getFullName();

@@ -5,7 +5,6 @@
     g	Perform a global match rather than stops at first match
     m	Perform multiline matching
 
-
     Character	    Description	            Example	Try it
     []	        A set of characters	"[a-m]"	
     \	        Signals a special sequence (can also be used to escape special characters)	"\d"	
@@ -32,8 +31,6 @@
     \w	        Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character)	"\w"	
     \W	        Returns a match where the string DOES NOT contain any word characters	"\W"	
     \Z	        Returns a match if the specified characters are at the end of the string	"Spain\Z"	
-
-
    */
 
 console.log("---- REGEX ----");
